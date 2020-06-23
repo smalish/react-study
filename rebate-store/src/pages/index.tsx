@@ -1,24 +1,31 @@
 import * as React from 'react'
-import axios from 'axios'
+import {getList} from '../service/api'
 import { createStore } from 'redux' // 引入
 
 class App extends React.Component{
     public render(){
         return (<div>
-                index
+                index111
                 {/* <CountCon /> */}
             </div>)
     }
     componentDidMount(){
-        axios.get('https://5b5e71c98e9f160014b88cc9.mockapi.io/api/v1/lists')
-        .then((res) => {
-            res = res.data
-            console.log(res)
-        })
-        .catch((error) => {
-            console.log(error)
+        // axios.get('https://5b5e71c98e9f160014b88cc9.mockapi.io/api/v1/lists')
+        // .then((res) => {
+        //     res = res.data
+        //     console.log(res)
+        // })
+        // .catch((error) => {
+        //     console.log(error)
+        // })
+
+
+
+        getList({form_no: 123}).then((res) => {
+          console.log('getList-------')
         })
 
+        
 
         // redux
         const reducer = (state = {count: 0}, action:any) => {

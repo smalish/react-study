@@ -71,8 +71,16 @@ component = {
 
 #### 引入axios
 
-在react中React.Component.prototype.axios = axios也是可以的，但是这种做法并不常见，react是更纯粹的，函数式的，将方法挂载到prototype是非常不纯粹的，react通过redux管理
+在react中React.Component.prototype.axios = axios也是可以的，但是这种做法并不常见，react是更纯粹的，函数式的，将方法挂载到prototype是非常不纯粹的
+
+封装请求，见src/service
 
 #### 引入redux
+
+当前项目没必要
+
+#### webpack配置
+
+
 
 

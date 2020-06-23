@@ -1,4 +1,5 @@
 import axios,{Method} from 'axios'
+import qs from 'qs'
 
 function apiAxios (method: Method, url: string, params: any ){
 
@@ -7,7 +8,7 @@ function apiAxios (method: Method, url: string, params: any ){
     axios({
 			method,
 			url,
-			data: method === 'POST' || method === 'PUT' ? params : null,
+			data: method === 'POST' || method === 'PUT' ? qs.stringify(params) : null,
 			params: method === 'GET' || method === 'DELETE' || method === 'PATCH' ? params : null,
 			withCredentials: false
 		}).then((response) => {
@@ -21,12 +22,12 @@ function apiAxios (method: Method, url: string, params: any ){
               // Vue.prototype.GLOBAL.cookie('callback_url',  location.href.split('#')[1], Vue.prototype.GLOBAL.mainUrl)
               // location.reload()
             
-              let mainUrl = window.location.protocol + '//' + window.location.host
-              var pagepath = window.location.href.replace(mainUrl, response.data.data.domain)
-              var callback_url = response.data.data.domain + '/wx/NwH5AuthCallback?platform_id=' + response.data.data.platform_id + '&callback=' + encodeURIComponent(pagepath)
+              // let mainUrl = window.location.protocol + '//' + window.location.host
+              // var pagepath = window.location.href.replace(mainUrl, response.data.data.domain)
+              // var callback_url = response.data.data.domain + '/wx/NwH5AuthCallback?platform_id=' + response.data.data.platform_id + '&callback=' + encodeURIComponent(pagepath)
       
-              var weixin_url = response.data.data.authUrl.split('redirect_uri=')[0] + 'redirect_uri=' + encodeURIComponent(callback_url) + response.data.data.authUrl.split('redirect_uri=')[1]
-              location.href = weixin_url
+              // var weixin_url = response.data.data.authUrl.split('redirect_uri=')[0] + 'redirect_uri=' + encodeURIComponent(callback_url) + response.data.data.authUrl.split('redirect_uri=')[1]
+              // location.href = weixin_url
             }
     
             break 

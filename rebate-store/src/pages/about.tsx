@@ -14,6 +14,7 @@ export default class Counter extends React.PureComponent<IProps> {
         const { value, onIncrement, onDecrement } = this.props;
         return (
             <p>
+                about
                 Clicked: { value } times
                 <br />
                 <br />

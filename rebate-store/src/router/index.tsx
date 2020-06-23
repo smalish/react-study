@@ -2,18 +2,25 @@ import * as React from 'react'
 import Loadable from 'react-loadable'
 import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 
+// import Index from '../pages/index'
+// import About from '../pages/about'
+// import User from '../pages/user'
+
 const RouterList: any[] = [
   {
-    component: () => import('../pages/index'),
-    path: '/'
+    path: '/',
+    component: () => import('../pages/index')
   },
   {
-    component: () => import('../pages/index'),
-    path: '/index'
+    path: '/index',
+    component: () => import('../pages/index')
   },
   {
-    component: () => import('../pages/about'),
-    path: '/about'
+    path: '/about',
+    component: () => import('../pages/about')
+  },{
+    path: '/activity',
+    component: () => import('../pages/activity/FreeOrder')
   }
 
 ]
@@ -38,6 +45,16 @@ const RouterMap = () => (
   </Router>
 )
 
-console.log(RouterMap)
+// const RouterMap2 = () => (
+//   <Router>
+//     <Switch>
+
+//         <Route exact={true} path='./' component = {Index} />
+//         <Route exact={true} path='./about' component = {About} />
+//         <Route exact={true} path='./user' component = {User} />
+
+//     </Switch>
+//   </Router>
+// )
 
 export default RouterMap

@@ -1,0 +1,122 @@
+@import url('../../style/variable.less');
+
+@modal_ti_color: #ff5527;
+.out_div {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+  .flex_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    .modal_div {
+        position: relative;
+        display: block;
+        width: 600px;
+        border-radius: 20px;
+        background-color: #fffefb;
+        .close_btn{
+            position: absolute;
+            top: -90px;
+            right: -5px;
+            width: 60px;
+            height: 60px;
+            background: url('https://static.rong360.com/upload/png/dc/70/dc706b186a00b4c441ee0302a8ee8307.png') no-repeat;
+            background-size: 60px 60px;
+            
+        }
+        .modal_title{
+            .flex();
+            height: 92px;
+            background-color: @modal_ti_color;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            color: rgb(255, 254, 251);
+            font-size: 36px;
+            font-family: "PingFang SC";     
+        }
+        
+    }
+
+    // 活动规则
+    .rule_div{
+        .modal_content{
+            padding: 20px 38px 50px 38px;
+            p{
+                position: relative;
+                padding-left: 34px;
+                font-size: 24px;
+                font-family: "PingFang SC";
+                color: rgb(64, 21, 10);
+                line-height: 2;
+                .icon{
+                    .flex();
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
+                    width: 25px;
+                    height: 25px;
+                    background-color: @modal_ti_color;
+                    border-radius: 25px;
+                    color: rgb(255, 255, 255);
+                }
+            }
+
+        }
+    }
+    
+    // 上期中奖名单
+    .user_div{
+        padding: 22px 23px 35px 23px;
+        .modal_content{
+            .row{
+                height: 54px;
+                font-size: 24px;
+                font-family: "PingFang SC";
+                color: rgb(64, 21, 10);
+                text-align: center;
+                &:first-child{
+                    background-color: #ffe190!important;
+                }
+                &:nth-child(2n){
+                    background-color: #fff9d3;
+                }
+                &:nth-child(2n+1){
+                    background-color: #fffefb;  
+                }
+                span{
+                    display: inline-block;
+                    box-sizing: border-box;
+                    height: 54px;
+                    line-height: 54px;
+                    &:nth-child(1){
+                        width: 20%;
+                        border-right: 1px solid #fff1cd;
+                    }
+                    &:nth-child(2){
+                        width: 35%;
+                        border-right: 1px solid #fff1cd;
+                    }
+                    &:nth-child(3){
+                        width: 45%;
+                    }
+                }
+
+            }
+            .r_title{
+
+            }
+        }
+    }
+
+
+  }
+}

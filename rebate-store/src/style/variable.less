@@ -1,0 +1,114 @@
+// 样式基础变量
+
+@font-family: "PingFangSC-Regular","微软雅黑",arial,sans-serif;
+
+// 颜色变量
+@title-color: #3B3453; // 标题以及部分正文文字颜色
+@text-color: #605F6B;   // 辅助正文颜色
+@desc-color: #9A99A3;  // 描述文字颜色
+@tip-color: #999999;  // 副标题和部分提示的颜色
+@active-color: #FF4333;  // 高亮文字颜色
+@keyword-color: #F78400;  // 强调文字颜色
+@err-color: #FF2859; // 错误提示
+@line-color: #EEEEEE;  // 边框线颜色
+
+
+.bg-common() {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+}
+
+.text-overflow() {
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// ios上中粗字体
+.font-weight() {
+  // iOS和安卓通用的粗体
+  // font-weight: 700;
+
+  // iOS上的粗体
+  font-family: "PingFangSC-Medium";
+}
+
+//边框背影
+.box-shadow(){
+  background: #FFFFFF;
+  box-shadow: 0 0 20px 0 rgba(11,11,50,0.08);
+  border-radius: 8px; 
+}
+
+// css 箭头
+.arrow(@color:#DDD; @width:6px; @border-width: 6px; @deg: 45deg) {
+  display: inline-block;
+  width: @width;
+  height: @width;
+  border: @color solid;
+  border-width: @border-width @border-width 0 0;
+  transform: rotate(@deg);
+}
+
+// css 三角形
+.caret-common(){
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+}
+.caret-down(@size: 6px; @color:#222) {
+  .caret-common();
+  border-top:   @size solid @color;
+  border-right: @size solid transparent;
+  border-left:  @size solid transparent;
+  border-bottom: 0 dotted;
+}
+
+// flex
+.flex(@align-items:center,@justify-content:center){
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: @align-items;
+  justify-content: @justify-content;
+  -webkit-align-items:@align-items;
+  -webkit-justify-content:@justify-content;
+}
+
+.clearfix() {
+  &:before, &:after{ 
+      content:""; 
+      display:table; 
+  } 
+  &:after {clear:both;} 
+  &{ 
+      *zoom:1;
+  }
+}
+
+// 现在价格
+.price-current(@font-size: 48px; @line-height: 66px; @transformY: translateY(12%); @color: @active-color) {
+  font-size: @font-size;
+  line-height: @line-height;
+  color: @color;
+  .font-weight();
+  position: relative;
+  padding-left: 14px;
+  &::before {
+    // content: "";
+    content: "¥"; // 切记这里要使用半角的“¥”， 否则在安卓上，显示不对
+    position: absolute;
+    left: 0;
+    transform: @transformY;
+    font-size: 24px;
+    font-family: 'PingFangSC-Regular';
+    // width: 16px;
+    // height: 20px;
+    // background-image: url("https://static.rong360.com/upload/png/a8/5a/a85a03fee193c3ce1b1703bcc197dbd6.png");
+    // background-size: 16px 20px;
+  }
+}
+

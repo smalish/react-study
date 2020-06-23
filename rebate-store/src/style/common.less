@@ -1,0 +1,178 @@
+// :global{}
+  // 本项目中公共模块样式
+  body{
+    font-family: "PingFangSC-Regular","微软雅黑",arial,sans-serif;
+    font-size: 28px;
+    background: #ffffff;
+    color: #3B3453;
+  }
+
+  .bg-common {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+  }
+
+  // 页面灰色背景
+  .page-bg-gray {
+    min-height: 99vh;
+    background-color: #F9F9FB;
+  }
+
+  .font-weight {
+    // font-weight: 700;
+    // ios上中粗字体
+    font-family: "PingFangSC-Medium";
+  }
+
+  .overflow-text{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  //超过两行打点
+  .text-overflow-2{ 
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+  }
+
+  // 按钮居中
+  .common-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // 大按钮尺寸和字体
+  .big-btn {
+    height: 90px;
+    border-radius: 50px;
+    font-size: 34px;
+  }
+
+  // 灰色实心按钮
+  .gray-btn {
+    color: #ffffff;
+    background: #D6D6E0;
+    box-shadow: 0 6px 12px 0 rgba(69,69,129,0.10);
+  }
+
+  // 灰色空心按钮
+  .gray-border-btn {
+    color: #605F6B;
+    &::before {
+      border: 1px solid #9A99A3;
+    }
+  }
+
+  // 主要高亮按钮
+  .active-btn{
+    background-image: linear-gradient(270deg, #FF4333 0%, #FF7839 100%);
+    box-shadow: 0 0 4px 0 rgba(255,67,51,0.40), 0 6px 12px 0 rgba(255,67,51,0.24);
+    color: #ffffff;
+  }
+
+  // 高亮空心按钮
+  .active-border-btn {
+    color: #FF4333;
+    background: #FFFFFF;
+    &::before {
+      border: 1px solid #FF4333;
+    }
+  }
+
+
+  //边框背影
+  .box-shadow{
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(11, 11, 50, 0.08);
+    border-radius: 10px;
+  }
+
+  // 标题以及部分正文文字颜色
+  .title-color {
+    color: #3B3453;
+  }
+  // 辅助正文颜色
+  .text-color {
+    color: #605F6B;
+  }
+  // 描述文字颜色
+  .desc-color {
+    color:#9A99A3;
+  }
+  // 副标题和部分提示的颜色
+  .tip-color {
+    color:#999999;
+  }
+  // 高亮文字颜色
+  .active-color {
+    color: #FF4333;
+  }
+  // 强调文字颜色
+  .keyword-color {
+    color: #F78400;
+  }
+  // 错误提示
+  .err-color {
+    color: #FF2859
+  }
+  // 边框线颜色
+  .line-color {
+    color: #EEEEEE;
+  }
+
+
+
+  // 1px样式
+  .onepxBorder{
+    position: relative;
+    &::before {
+      content: "";
+      pointer-events: none; /* 防止点击触发 */
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      top: 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      // @media screen and (-webkit-min-device-pixel-ratio: 2){
+        -webkit-transform: (scale(0.5));    
+        transform: (scale(0.5));
+        width: 200%;
+        height: 200%;
+      // }
+      // @media screen and (-webkit-min-device-pixel-ratio: 2){
+      //   -webkit-transform: (scale(0.333));    
+      //   transform: (scale(0.333));
+      //   width: 300%;
+      //   height: 300%;
+      // }
+    }
+  }
+
+
+  ::-webkit-input-placeholder{
+    color:#cccccc;
+    font-family: "PingFangSC-Regular";
+    font-weight: normal;
+  }
+  :-moz-placeholder{
+    color:#cccccc;
+    font-family: "PingFangSC-Regular";
+    font-weight: normal;
+  }
+  ::-moz-placeholder{
+    color:#cccccc;
+    font-family: "PingFangSC-Regular";
+    font-weight: normal;
+  }
+
+
+

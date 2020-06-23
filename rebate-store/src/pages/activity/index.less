@@ -1,0 +1,159 @@
+@import url('../../style/variable.less');
+
+.page{
+    width: 750px;
+    min-height: 100vh;
+    background-color: #ff5527;
+    .main-content{
+        position: relative;
+        width: 750px;
+        height: 1113px;
+        background: url('https://static.rong360.com/upload/png/31/e1/31e1534a18c8487a08c4cb2ab2886d92.png') no-repeat;
+        background-size: 750px 1113px;
+        .time{
+            position: absolute;
+            left: 218px;
+            top: 233px;
+            width: 311px;
+            height: 46px;
+            background: url('https://static.rong360.com/upload/png/81/eb/81eb40011b6734238cd3d3baf432e0ef.png') no-repeat;
+            background-size: 311px 46px;
+            .flex();
+            .font-weight;
+            font-size: 28px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+
+        }
+        .count-down{
+            position: absolute;
+            left: 144px;
+            top: 312px;
+            width: 471px;
+            height: 94px;
+            background: url('https://static.rong360.com/upload/png/c4/35/c435973be63c98f7ef1857d72dae5f89.png') no-repeat;
+            background-size: 471px 94px;
+            .count-down-num{
+                position: absolute;
+                top: 25px;
+                .flex();
+                width: 32px;
+                height: 44px;
+                font-size: 32px;
+                color: rgb(255, 255, 255);
+                .font-weight;
+                &.num-1{
+                    left: 158px;
+                }
+                &.num-2{
+                    left: 198px;
+                }
+                &.num-3{
+                    left: 254px;
+                }
+                &.num-4{
+                    left: 294px;
+                }
+                &.num-5{
+                    left: 352px;
+                }
+                &.num-6{
+                    left: 390px;
+                }
+            }
+        }
+        .main-text{
+            position: absolute;
+            top: 900px;
+            left: 0;
+            width: 100%;
+            line-height: 24px;
+            font-size: 18px;
+            color: rgb(88, 19, 0);
+            text-align: center;
+        }
+        .button-left{
+            position: absolute;
+            width: 100%;
+            top: 940px;
+            left: 100px;
+            width: 200px;
+            height: 90px;
+        }
+        .button-right{
+            position: absolute;
+            top: 940px;
+            right: 110px;
+            width: 230px;
+            height: 90px;
+        }
+    }
+    .list-view{
+      padding: 0px 34px 84px 34px;
+      .list-title{
+          width: 100%;
+          height: 122px;
+          background: url('https://static.rong360.com/upload/png/36/7c/367cadd5541b101f25a5fcea6aefeeeb.png') no-repeat;
+          background-size: 406px 45px;
+          background-position: center;
+      }
+      .goods-list{
+          width:100%;
+          .flex(flex,space-between);
+          flex-wrap: wrap;     
+          .goods-item{
+              .box-shadow();
+              width: 48%; 
+              box-sizing: border-box;
+              margin-bottom: 30px;
+              .item-img{
+              height: 264px;
+              margin: 0 auto;
+              text-align: center;
+              overflow: hidden;
+              img{
+                  height: 100%;
+              }
+              }
+              .bottom-desc{
+                padding: 30px 20px;
+                box-sizing: border-box;
+              }
+              .goods-title{ 
+                  font-size: 28px;
+                  color: @title-color;
+                  letter-spacing: 0;
+                  margin-bottom: 10px;
+                  line-height: 40px; 
+                  .font-weight();
+              }
+              .price{  
+                  // .now-price{
+                  //     margin-right:20px;
+                  //     .price-current(@font-size: 32px, @line-height:44px, @transformY: translateY(4%));
+                  //     span {
+                  //         font-size: 24px;
+                  //     }
+                  // }
+                  .old-price{
+                      font-size: 24px;
+                      line-height: 34px;
+                      color: @desc-color;
+                      text-decoration: line-through;  
+                  }  
+              } 
+              .bay-btn{
+                  margin-top: 20px;
+                  .flex();
+                  height: 60px;
+                  border-radius: 30px;
+                  background-color: #ff5400;
+                  font-size: 34px;
+                  font-family: "PingFang SC";
+                  color: rgb(255, 255, 255);
+
+              }
+          } 
+      }
+    }
+ }

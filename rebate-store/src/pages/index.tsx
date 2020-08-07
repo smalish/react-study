@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {getList} from '../service/api'
-import { createStore } from 'redux' // 引入
+import {cookie} from '../utils/common'
 
 class App extends React.Component{
     public render(){
@@ -25,32 +25,10 @@ class App extends React.Component{
           console.log('getList-------')
         })
 
-        
-
-        // redux
-        const reducer = (state = {count: 0}, action:any) => {
-            switch (action.type){
-              case 'INCREASE': return {count: state.count + 1};
-              case 'DECREASE': return {count: state.count - 1};
-              default: return state;
-            }
-        }
-          
-        const actions = {
-          increase: () => ({type: 'INCREASE'}),
-          decrease: () => ({type: 'DECREASE'})
-        }
-
-        const store = createStore(reducer);
-
-        store.subscribe(() =>
-          console.log(store.getState())
-        );
-
-        store.dispatch(actions.increase()) // {count: 1}
-        store.dispatch(actions.increase()) // {count: 2}
-        store.dispatch(actions.increase()) // {count: 3}
-
+        cookie.set('flag', '1')
+        cookie.set('flag', '2')
+        console.log(cookie.get('flag'))
+        cookie.remove('flag')
         
     }
 }

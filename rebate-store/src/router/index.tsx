@@ -21,6 +21,12 @@ const RouterList: any[] = [
   },{
     path: '/activity',
     component: () => import('../pages/activity/FreeOrder')
+  },{
+    path: '/defaultprops',
+    component: () => import('../pages/defaultPropsDemo/index')
+  },{
+    path: '/lifecycle',
+    component: () => import('../pages/lifecycle/index')
   }
 
 ]
